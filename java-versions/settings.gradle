@@ -1,0 +1,2 @@
+rootProject.name = 'java-versions'
+include ('jmp-dto', 'jmp-service-api', 'jmp-bank-api', 'jmp-cloud-bank-impl', 'jmp-cloud-service-impl')
