@@ -1,5 +1,5 @@
 module jmpCloudBankImpl {
     requires jmpDto;
-    requires jmpBankApi;
+    requires transitive jmpBankApi;
     exports com.mkuleshov.cloud.bank.impl;
 }
