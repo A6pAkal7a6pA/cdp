@@ -1,4 +1,4 @@
 module jmpServiceApiImpl {
-    requires transitive jmpServiceApi;
+    requires jmpServiceApi;
     requires jmpDto;
 }
