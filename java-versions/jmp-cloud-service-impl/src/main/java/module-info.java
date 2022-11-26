@@ -1,4 +1,6 @@
 module jmpServiceApiImpl {
-    requires jmpServiceApi;
+    requires transitive jmpServiceApi;
     requires jmpDto;
+    exports com.mkuleshov.service.api.impl;
+    exports com.mkuleshov.service.api.exception;
 }

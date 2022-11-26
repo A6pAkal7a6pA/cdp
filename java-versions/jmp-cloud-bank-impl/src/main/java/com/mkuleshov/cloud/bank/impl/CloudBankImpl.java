@@ -11,7 +11,8 @@ public class CloudBankImpl implements Bank {
 
     @Override
     public BankCard createBankCard(User user, BankCardType bankCardType) {
-        return new BankCard();
-
+        return BankCardType.CREDIT.equals(bankCardType) ?
+                new CreditBankCard(user) :
+                new DebitBankCard(user);
     }
 }
