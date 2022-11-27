@@ -26,6 +26,7 @@ public class Demo {
         Service service = ServiceLoader.load(Service.class)
                 .findFirst()
                 .get();
+
         service.subscribe(maxCard);
         service.subscribe(alexeyCard);
         service.subscribe(arazCard);
