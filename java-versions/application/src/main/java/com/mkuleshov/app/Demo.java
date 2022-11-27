@@ -7,9 +7,9 @@ import com.mkuleshov.dto.BankCardType;
 import com.mkuleshov.dto.User;
 import com.mkuleshov.service.api.Service;
 import com.mkuleshov.service.api.exception.BankCardException;
-import com.mkuleshov.service.api.impl.CloudServiceImpl;
 
 import java.time.LocalDate;
+import java.util.ServiceLoader;
 
 public class Demo {
     public static void main(String[] args) {
@@ -17,12 +17,15 @@ public class Demo {
         User araz = new User("Araz", "SurnameAraz", LocalDate.of(2000, 3, 21));
         User alexey = new User("Alex", "SurnameAlex", LocalDate.of(2005, 4, 15));
 
+
         Bank bank = new CloudBankImpl();
         BankCard maxCard = bank.createBankCard(max, BankCardType.DEBIT);
         BankCard alexeyCard = bank.createBankCard(alexey, BankCardType.CREDIT);
         BankCard arazCard = bank.createBankCard(araz, BankCardType.DEBIT);
 
-        Service service = new CloudServiceImpl();
+        Service service = ServiceLoader.load(Service.class)
+                .findFirst()
+                .get();
         service.subscribe(maxCard);
         service.subscribe(alexeyCard);
         service.subscribe(arazCard);

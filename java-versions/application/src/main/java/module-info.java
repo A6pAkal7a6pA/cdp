@@ -1,7 +1,7 @@
 module application {
-    requires jmpServiceApi;
-    requires jmpBankApi;
-    requires jmpDto;
+    uses com.mkuleshov.bank.api.Bank;
+    uses com.mkuleshov.service.api.Service;
     requires jmpServiceApiImpl;
     requires jmpCloudBankImpl;
+    requires jmpDto;
 }
